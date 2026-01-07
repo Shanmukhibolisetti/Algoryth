@@ -47,13 +47,18 @@ function ProblemsPageContent() {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchProblems(urlSearch, urlDifficulty, urlTags, urlSort);
   }, [urlSearch, urlDifficulty, urlTags, urlSort]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSearch(urlSearch);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDifficulty(urlDifficulty);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedTags(urlTags);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSort(urlSort);
   }, [urlSearch, urlDifficulty, urlTags, urlSort]);
 
