@@ -5,7 +5,7 @@ import Link from "next/link";
 import CodeEditor from "./CodeEditor";
 import SplitPane from "./SplitPane";
 
-export default function ProblemWorkspace({ problem }) {
+export default function ProblemWorkspace({ problem, onNext, onPrev }) {
   const starterCode = useMemo(
     () =>
       `// ${problem.title}\n\nfunction solve(input) {\n  // TODO\n}\n`,
@@ -129,6 +129,7 @@ export default function ProblemWorkspace({ problem }) {
           </Link>
           <button
             type="button"
+            onClick={onPrev}
             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-white text-sm text-zinc-700 hover:bg-black/3 dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-white/10"
             aria-label="Previous"
           >
@@ -136,6 +137,7 @@ export default function ProblemWorkspace({ problem }) {
           </button>
           <button
             type="button"
+            onClick={onNext}
             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-white text-sm text-zinc-700 hover:bg-black/3 dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-white/10"
             aria-label="Next"
           >
