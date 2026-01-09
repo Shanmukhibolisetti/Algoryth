@@ -28,6 +28,7 @@ export default function ProblemNavigator({initialSlug}) {
 
     return (
         <ProblemWorkspace
+        key={currentPId}
         problem={problems[currentPId]}
         onNext={handleNext}
         onPrev={handlePrev}
